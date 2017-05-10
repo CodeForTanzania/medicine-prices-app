@@ -44,7 +44,7 @@ a {
 .search-result {
   width: 80%;
   max-height: 200px;
-  overflow: scroll;
+  overflow-y: scroll;
   background: #f5f5f5;
   position: absolute;
   left: 10%;
@@ -204,7 +204,7 @@ a {
   padding-top: 0;
   font-size: 18px;
   background: #f7f7f7;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .card .body-result .result {
   width: 100%;
@@ -622,4 +622,18 @@ a {
   .min500 {
     min-height: 100vh !important;
   }
+}
+
+/* -- CodeForTanzania Styles -- */
+.hero .header{
+  text-align: center;
+}
+
+.hero .sub-header{
+  text-align: center;
+  font-size: 16px;
+}
+
+.search-result{
+  border: 1px solid #dedede;
 }

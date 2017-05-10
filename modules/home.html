@@ -24,9 +24,10 @@
 <div class="hero">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2 p-t-md">
+			<div class="col-md-10 col-md-offset-1 p-t-md">
 				<p class="sub-header sub">You might be paying too much for life saving drugs, let’s find out.</p>
 				<p class="header p-t-sm">What should your medicine cost?</p>
+				<br />
 				<p class="sub-header sub">
 					According to a 2006 report of the Ministry of Health, medicines are unaffordable to the majority of Tanzanians (90.2%) who live below the income level of 2 USD a day as well as the government worker that earns a minimum wage of 1.4 USD per day.
 				</p>
@@ -56,7 +57,7 @@
 					<div class="search-result" ng-if="showResults">
 						<li class="" ng-repeat="med in medicines | filter: credentials.name" ng-click="select(med)">{{med.name}}</li>
 					</div>
-					<p>for  &#8358<input type="number" ng-model="credentials.price" placeholder="unit price, e.g price per tablet" required></p>
+					<p>for  TZS<input type="number" ng-model="credentials.price" placeholder="unit price, e.g price per tablet" required></p>
 				</div>
 				<div class="footer">
 					<button class="btn btn-success" ng-click="step1()" ng-disabled="priceForm.$invalid">
@@ -96,12 +97,12 @@
 		<h3 class="text-fade text-thin" ng-if="!loaded">Calculating...</h3>
 		<div class="" ng-cloak>
 
-			<h2 class="m-b-md intro animated fadeIn" ng-if="loaded">The global average price for {{credentials.name}}, {{credentials.form}}, {{credentials.strength}} is <span class="text-thin">&#8358;{{credentials.realPrice | number:2}}</span>.</h2>
+			<h2 class="m-b-md intro animated fadeIn" ng-if="loaded">The global average price for {{credentials.name}}, {{credentials.form}}, {{credentials.strength}} is <span class="text-thin">TZS {{credentials.realPrice | number:2}}</span>.</h2>
 			<h3 class="typing m-b-lg" ng-show="loaded">{{typing}}</h3>
 			<div ng-if="shout" class="animated animate-slow fadeIn">
 				<p class="call2action">Tell the world :)</p>
-				<a class="animated animate-slow fadeIn" href="https://twitter.com/intent/tweet?text=Hello world, I am paying {{outcome}} percent of the global average price for {{credentials.name}}!&hashtags=fixmedprices&url=https://medicine-prices.herokuapp.com" target="_blank" ng-if="social"><i class="fa fa-twitter fa-3x animated animate-slow pulse infinite text-center"></i></a>
-  		<p class="assumption" ng-if="social">Assumption: $1 = &#8358;304</p>
+				<a class="animated animate-slow fadeIn" href="https://twitter.com/intent/tweet?text=Hello world, I am paying {{outcome}} percent of the global average price for {{credentials.name}}!&hashtags=fixmedprices&url=https://medprices.codefortanzania.org" target="_blank" ng-if="social"><i class="fa fa-twitter fa-3x animated animate-slow pulse infinite text-center"></i></a>
+  		<p class="assumption" ng-if="social">Assumption: $1 = TZS 2,230</p>
 				<p class="clickable text-bold go-back" ng-click="close()" ng-if="goBack"><i class="fa fa-long-arrow-left"></i> Check something else</p>
 			</div>
 		</div>

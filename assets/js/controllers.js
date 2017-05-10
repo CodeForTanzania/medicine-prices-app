@@ -21,7 +21,7 @@ angular.module('app.controllers', ['ngAnimate'])
 
     $scope.initTyper = function (nname,price,outcome,form,realPrice,strength) {
         $scope.typing = $(".typing").typed({
-            strings: ["<p> ^2000 At <span>&#8358;"+price+ "</span>,^2000 you are paying "  +outcome+ "% of the global average price.</p>"],
+            strings: ["<p> ^2000 At <span>TZS "+price+ "</span>,^2000 you are paying "  +outcome+ "% of the global average price.</p>"],
             contentType: 'html',
             typeSpeed: 30,
             backDelay: 750,
@@ -45,7 +45,7 @@ angular.module('app.controllers', ['ngAnimate'])
         console.log(med.plain());
         $scope.credentials.name = med.name;
         $scope.credentials.form = med.form;
-        $scope.credentials.realPrice = (med.price * 304);
+        $scope.credentials.realPrice = (med.price * 2230);
         $scope.credentials.strength = med.strength;
         $scope.showResults = false;
     }
@@ -59,7 +59,7 @@ angular.module('app.controllers', ['ngAnimate'])
     }
 
     $scope.step2 = function(select) {
-        $scope.answer =  ($scope.credentials.price / (select.price * 304)) * 100;
+        $scope.answer =  ($scope.credentials.price / (select.price * 2230)) * 100;
         $scope.outcome = Math.round($scope.answer);
     	$scope.two = true;
         $scope.personNode = true;
